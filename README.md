@@ -53,7 +53,7 @@ Loia follows a curated system prompt designed to:
 ## 🔗 Get Started
 
 Visit the Loia landing page here:  
-📎 [Loia](https://drs-az.github.io/Loia/)
+🌊 [Loia](https://drs-az.github.io/Loia/)
 
 Use it on ChatGPT:  
 🧠 [Launch Loia on ChatGPT](#) *(placeholder link)*
