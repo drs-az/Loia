@@ -11,7 +11,17 @@
       --text-dark: #2d3436;
       --text-light: #636e72;
       --radius: 12px;
-    }* {
+    }
+
+    body.dark-mode {
+      --primary-color: #74b9ff;
+      --accent-color: #0984e3;
+      --background: #2d3436;
+      --text-dark: #dfe6e9;
+      --text-light: #b2bec3;
+    }
+
+    * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -30,12 +40,18 @@ body {
   margin: 0 auto;
 }
 
-.logo {
-  width: 100%;
-  height: auto;
-  margin: 2rem auto;
-  display: block;
-}
+  .logo {
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .logo {
+      max-width: 400px;
+    }
+  }
 
 .section {
   margin-bottom: 3rem;
@@ -88,16 +104,94 @@ textarea {
   color: var(--text-dark);
 }
 
-.cta {
-  display: inline-block;
-  margin-top: 1rem;
-  background: var(--accent-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: bold;
-}
+  .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .playlist-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .playlist-card {
+    width: 100%;
+    perspective: 1000px;
+  }
+
+  @media (min-width: 600px) {
+    .playlist-card {
+      flex: 0 0 calc(33.333% - 1rem);
+    }
+  }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .playlist-card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-back {
+    background: var(--background);
+    color: var(--text-dark);
+    padding: 1rem;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card-back a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+
+  .mode-toggle {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
 
 @media (max-width: 600px) {
   .copy-button {
@@ -121,12 +215,12 @@ textarea {
 </section>
 
 <!-- Prompt Section -->
-<section class="section">
-  <h2>Use the Loia Prompt</h2>
-  <p>
-    Start with Loia in the Custom GPT store or copy the raw prompt below to use in your favorite LLM:
-  </p>
-  <a href="https://chat.openai.com/gpts/loia" class="cta">Launch Loia on ChatGPT</a>
+  <section class="section">
+    <h2>Use the Loia Prompt</h2>
+    <p>
+      Start with Loia in the Custom GPT store or copy the raw prompt below to use in your favorite LLM:
+    </p>
+    <a href="https://chat.openai.com/gpts/loia" class="cta">Launch Loia on ChatGPT</a>
 
   <div class="prompt-container">
     <button class="copy-button" onclick="copyPrompt()">Copy</button>
@@ -134,7 +228,51 @@ textarea {
   </div>
 </section>
 
-  </div>  
+<!-- Playlists Section -->
+<section class="section">
+  <h2>Featured Playlists</h2>
+  <div class="playlist-grid">
+    <div class="playlist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://source.unsplash.com/random/300x300?music" alt="Playlist cover" />
+        </div>
+        <div class="card-back">
+          <h3>Chill Vibes</h3>
+          <p>Smooth tunes for relaxing focus.</p>
+          <a href="https://open.spotify.com/playlist/placeholder1" target="_blank">Open on Spotify</a>
+        </div>
+      </div>
+    </div>
+    <div class="playlist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://source.unsplash.com/random/300x300?abstract" alt="Playlist cover" />
+        </div>
+        <div class="card-back">
+          <h3>Deep Flow</h3>
+          <p>Keep your work sessions on track.</p>
+          <a href="https://open.spotify.com/playlist/placeholder2" target="_blank">Open on Spotify</a>
+        </div>
+      </div>
+    </div>
+    <div class="playlist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="https://source.unsplash.com/random/300x300?ocean" alt="Playlist cover" />
+        </div>
+        <div class="card-back">
+          <h3>Ambient Waves</h3>
+          <p>Ethereal sounds for creative moments.</p>
+          <a href="https://open.spotify.com/playlist/placeholder3" target="_blank">Open on Spotify</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <button id="mode-toggle" class="mode-toggle">Dark Mode</button>
+
+  </div>
   <script>
     function copyPrompt() {
       const promptText = document.getElementById('prompt');
@@ -145,5 +283,15 @@ textarea {
       btn.innerText = 'Copied!';
       setTimeout(() => btn.innerText = 'Copy', 2000);
     }
+
+    document.querySelectorAll('.playlist-card').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+    });
+
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      modeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+    });
   </script></body>
 </html>
