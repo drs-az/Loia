@@ -44,7 +44,7 @@ Loia follows a curated system prompt designed to:
 ## 🛠 Tech Stack
 
 - **Prompt Engineering**: Custom system prompt fine-tuned for music theory + conversational UX  
-- **Language Model**: Optimized for GPT-4 (but usable across LLMs)  
+- **Language Model**: Optimized for GPT-4o (but usable across LLMs)  
 - **Frontend**: Responsive HTML/CSS landing page, with JS clipboard interaction  
 - **Playlist Transfer**: Soundiiz-compatible `.csv` output  
 
@@ -56,7 +56,7 @@ Visit the Loia landing page here:
 🌊 [Loia](https://drs-az.github.io/Loia/)
 
 Use it on ChatGPT:  
-🧠 [Launch Loia on ChatGPT](#) *(placeholder link)*
+🧠 [Launch Loia on ChatGPT](https://chatgpt.com/g/g-68795c0379e88191b75a44f3a445160f-loia) *(placeholder link)*
 
 Or copy the prompt into any LLM with clipboard-ready markdown on the [Loia](https://drs-az.github.io/Loia/) landing page.
 
