@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loia — Announcements</title>
+  <style>
+    :root {
+      --primary-color: #0a3d62;
+      --accent-color: #00cec9;
+      --background: #f9f9f9;
+      --text-dark: #2d3436;
+      --text-light: #636e72;
+      --radius: 12px;
+    }
+
+    body.dark-mode {
+      --primary-color: #74b9ff;
+      --accent-color: #0984e3;
+      --background: #004c55;
+      --text-dark: #dfe6e9;
+      --text-light: #b2bec3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .post {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #dcdde1;
+    }
+
+    .post h2 {
+      color: var(--primary-color);
+    }
+
+    .share-button {
+      background: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .mode-toggle {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Welcome</a>
+      <a href="announcements.html">Announcements</a>
+    </nav>
+    <h1>Announcements</h1>
+
+    <article class="post" id="post1">
+      <h2>Loia Launches on GitHub Pages <small>— June 2024</small></h2>
+      <p>We are excited to introduce Loia, your sonic flow architect. Explore playlists designed for perfect crossfades and dive into our prompt for crafting your own musical journeys.</p>
+      <button class="share-button" onclick="sharePost('Loia Launches on GitHub Pages', location.href)">Share</button>
+    </article>
+
+    <article class="post" id="post2">
+      <h2>Dark Mode Arrives <small>— July 2024</small></h2>
+      <p>By popular demand, the site now supports dark mode. Toggle the theme using the button in the corner and enjoy Loia in any lighting.</p>
+      <button class="share-button" onclick="sharePost('Dark Mode Arrives', location.href)">Share</button>
+    </article>
+  </div>
+
+  <button id="mode-toggle" class="mode-toggle">Dark Mode</button>
+
+  <script>
+    function sharePost(title, url) {
+      if (navigator.share) {
+        navigator.share({ title: title, url: url });
+      } else {
+        navigator.clipboard.writeText(url);
+        alert('Link copied to clipboard');
+      }
+    }
+
+    const modeToggle = document.getElementById('mode-toggle');
+
+    function updateToggleText() {
+      const dark = document.body.classList.contains('dark-mode');
+      modeToggle.textContent = dark ? 'Light Mode' : 'Dark Mode';
+    }
+
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      updateToggleText();
+    });
+
+    updateToggleText();
+  </script>
+</body>
+</html>

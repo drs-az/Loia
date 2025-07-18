@@ -39,6 +39,22 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
 
   .logo {
     width: 100%;
@@ -207,6 +223,10 @@ textarea {
 <body>
   <div class="container">
     <!-- Logo Placeholder -->
+    <nav>
+      <a href="index.html">Welcome</a>
+      <a href="announcements.html">Announcements</a>
+    </nav>
     <img src="img/loia.png" alt="Loia Logo" class="logo" id="logo" />
     <!-- About Section -->
 <section class="section">

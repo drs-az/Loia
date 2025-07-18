@@ -57,6 +57,7 @@ Visit the Loia landing page here:
 
 Use it on ChatGPT:  
 🧠 [Launch Loia on ChatGPT](https://chatgpt.com/g/g-68795c0379e88191b75a44f3a445160f-loia)
+Check out our [Announcements](https://drs-az.github.io/Loia/announcements.html) page for updates.
 
 Or copy the prompt into any LLM with clipboard-ready markdown on the [Loia](https://drs-az.github.io/Loia/) landing page.
 
