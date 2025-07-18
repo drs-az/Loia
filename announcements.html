@@ -103,16 +103,100 @@
     <h1>Announcements</h1>
 
     <article class="post" id="post1">
-      <h2>Loia Launches on GitHub Pages <small>— June 2024</small></h2>
-      <p>We are excited to introduce Loia, your sonic flow architect. Explore playlists designed for perfect crossfades and dive into our prompt for crafting your own musical journeys.</p>
+<h2>Introducing Loia 2.0 <small>— July 2025</small></h2>
+
+<p>We started Loia with one simple question:  
+<strong>What if playlists weren’t just a list of songs, but a fully composed experience?</strong><br>
+Not shuffled. Not generic. Not stitched together by algorithms. But handcrafted journeys, built around your attention, energy, and emotional flow.</p>
+
+<p>Today, we’re thrilled to announce <strong>Loia 2.0</strong> — a complete reimagining of how playlists are designed, delivered, and experienced.</p>
+
+<p><strong>Loia 2.0: What’s New?</strong><br>
+Loia 2.0 isn’t just an upgrade. It’s a rebuild from the ground up, designed to solve the biggest friction points and deliver the <em>most immersive music experiences you’ve ever heard.</em></p>
+
+<p><strong>Smarter Intake = Better Personalization</strong><br>
+Gone are the vague dropdowns. Now, Loia asks you one question at a time—like a conversation, not a survey. Your answers are stored in a live <code>prefs</code> object and include:</p>
+
+<ul>
+  <li>Mood or scenario</li>
+  <li>Energy (scale of 1–10)</li>
+  <li>Familiarity preference: 🔊 Hits / 🎯 Hidden gems / ⚖️ A blend</li>
+  <li>Playlist length in minutes</li>
+  <li>Spotify settings (crossfade + Automix)</li>
+  <li>Explicit content toggle</li>
+  <li>Choose a pre-made or custom playlist path</li>
+</ul>
+
+<p><em>Why it matters:</em> You get laser-precise playlists tailored to how you feel, how you focus, and how you move.</p>
+
+<p><strong>Custom Playlists Built Like DJ Sets</strong><br>
+Every custom playlist now follows strict musical architecture rules:</p>
+
+<ul>
+  <li>Track count = <code>ceil(length ÷ 3.5)</code>, max 120</li>
+  <li>Smooth transitions: ΔBPM ≤ 10, Camelot key shift ≤ 1</li>
+  <li>Structured into Acts I, II, III if over 30 tracks</li>
+  <li>Explicit content filtered if disabled</li>
+  <li>Optional cover art generated on request</li>
+  <li><strong>Every track verified playable on Spotify</strong> before final delivery</li>
+</ul>
+
+<p><em>Why it matters:</em> No more jarring transitions. No broken tracks. Just perfect flow.</p>
+
+<p><strong>Rock-Solid Exporting</strong><br>
+Loia 2.0 offers deterministic, script-friendly output with a consistent 3-part format:</p>
+
+<ol>
+  <li><strong>Playlist Summary</strong> – Mood, energy, and intent</li>
+  <li><strong>Playlist CSV</strong> – With guaranteed <code>title,artist,album</code> header</li>
+  <li><strong>Import Guide</strong> – With <a href="https://soundiiz.com/">Soundiiz</a> instructions to load into Spotify</li>
+</ol>
+
+<p>All outputs include clear download links—never hidden in a code block. Tools like Soundiiz just work.</p>
+
+<p><strong>Self-Checking Engine</strong><br>
+Before any playlist is sent, Loia performs a full diagnostic check:</p>
+
+<ul>
+  <li>✅ Duplicate tracks removed</li>
+  <li>✅ Explicit filter verified</li>
+  <li>✅ BPM and key cohesion enforced</li>
+  <li>✅ All tracks confirmed playable</li>
+  <li>✅ CSV row count = track count</li>
+  <li>✅ Playlist title + description always included</li>
+</ul>
+
+<p><em>Why it matters:</em> You can trust that what you receive is clean, complete, and ready to use.</p>
+
+<p><strong>Why Loia 2.0 Matters</strong><br>
+With 2.0, Loia isn’t just a playlist assistant—it’s a <em>musical architect</em>.<br>
+Built for deep work, for neurodivergent minds, for vibing without breaking flow.</p>
+
+<p>Whether you're grinding out a project, relaxing in the sun, or navigating complex emotions, Loia builds a soundscape that gets you there.</p>
+
+<p><strong>Coming Soon</strong></p>
+
+<ul>
+  <li>Real-time Spotify search integration</li>
+  <li>Smart mood-to-title generation</li>
+  <li>Genre-specific cover art templates</li>
+  <li>Dynamic blending based on audio fingerprinting</li>
+</ul>
+
+<p><strong>Try It. Share It. Shape What’s Next.</strong><br>
+Loia 2.0 is now live for all users. Try it out. Build a playlist. Share your feedback.<br>
+And if you’re building in the music, AI, or productivity space—we’d love to jam.</p>
+
+<p><strong>Loia is what happens when sound meets soul, and structure meets vibe.</strong><br>
+And we’re just getting started.</p>
       <button class="share-button" onclick="sharePost('Loia Launches on GitHub Pages', location.href)">Share</button>
     </article>
 
-    <article class="post" id="post2">
+    <!-- <article class="post" id="post2">
       <h2>Dark Mode Arrives <small>— July 2024</small></h2>
       <p>By popular demand, the site now supports dark mode. Toggle the theme using the button in the corner and enjoy Loia in any lighting.</p>
       <button class="share-button" onclick="sharePost('Dark Mode Arrives', location.href)">Share</button>
-    </article>
+    </article> -->
   </div>
 
   <button id="mode-toggle" class="mode-toggle">Dark Mode</button>
